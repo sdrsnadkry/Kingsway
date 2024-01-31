@@ -11,6 +11,11 @@ class Animal {
     }
 }
 
+const dogs = new Animal("Tom", "Black");
+
+console.log(dogs.eat("Meat"));
+console.log(dogs.eat("Meat", "Bones"));
+
 // const someAnimal = new Animal("Bruno", "Brown");
 
 // console.log(someAnimal.name, someAnimal.color)
@@ -21,13 +26,16 @@ class Dog extends Animal {
     bark() {
         console.log(this.name + " Dog is barking");
     }
+
+    eat() {
+        super.eat("Bones");
+        console.log(this.name + " eats bones");
+    }
 }
 
 const dog = new Dog("Tom", "Black");
 
 // console.log(dog.bark());
-
-// console.log(dog.eat("Meat"));
 
 class Cat extends Animal {
     meow() {
@@ -35,6 +43,8 @@ class Cat extends Animal {
     }
 }
 
-const cat = new Cat("Kitty", "White");
+// const cat = new Cat("Kitty", "White");
 
-console.log(cat.meow());
+// console.log(cat.meow());
+
+console.log(dog.eat("Meat"));
